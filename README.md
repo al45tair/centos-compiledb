@@ -6,4 +6,4 @@ and github.com/nickdiego/compiledb.
 
 Use it like this:
 
-  docker build . -t <your-tag>
+  docker build . -t your-tag
