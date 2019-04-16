@@ -3,10 +3,10 @@
 #
 FROM centos:6
 
-ENV COMPILEDBVER=0.9.8
-
 RUN yum install -y centos-release-scl
 RUN yum install -y python27 git
-RUN echo "source /opt/rh/python27/enable" > /root/.bashrc \
-    && source /root/.bashrc \
-    && pip install compiledb
+
+ENV PATH="/opt/rh/python27/root/usr/bin:${PATH}"
+ENV LD_LIBRARY_PATH="/opt/rh/python27/root/usr/lib64:${LD_LIBRARY_PATH}"
+
+RUN pip install compiledb
